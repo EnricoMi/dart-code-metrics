@@ -29,6 +29,7 @@ on:
       - "analysis_options.yaml"
       - "dart_dependency_validator.yaml"
       - "pubspec.yaml"
+  workflow_dispatch:
 
 permissions:
   statuses: write
