@@ -116,6 +116,13 @@ jobs:
           dart run coverage:format_coverage --in coverage --out coverage/coverage.lcov --lcov --report-on=lib
           bash <(curl -s https://codecov.io/bash) -f coverage/coverage.lcov
 
+      - name: Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: Test Results
+          path: "reports/tests.json"
+
   check-minimal-supported-dart-compatibility:
     needs: analysis
     runs-on: ubuntu-latest
