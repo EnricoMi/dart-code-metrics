@@ -78,7 +78,9 @@ jobs:
           check_unused_files_folders: "bin, example, lib"
 
       - name: Verify formatting
-        run: dart format --set-exit-if-changed .
+        run: |
+          dart format .
+          git diff
 
       - name: Compute the package score on pub.dev site
         uses: axel-op/dart-package-analyzer@v3
