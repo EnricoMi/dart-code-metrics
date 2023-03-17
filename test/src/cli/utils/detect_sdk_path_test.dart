@@ -18,6 +18,7 @@ void main() {
         detectSdkPath('/some/path/dart.exe', {}, platformIsWindows: true),
         null,
       );
+      throw Exception('exception');
     });
 
     test('should find sdk path inside environment PATH variable', () {
@@ -45,7 +46,7 @@ void main() {
     test(
       'should return null if sdk path is not found inside environment PATH variable',
       () {
-        IOOverrides.runZoned(
+       IOOverrides.runZoned(
           () {
             expect(
               detectSdkPath(
@@ -63,6 +64,7 @@ void main() {
             return file;
           },
         );
+       throw Error();
       },
     );
   });

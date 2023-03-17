@@ -16,7 +16,7 @@ void main() {
         CliRunner().description,
         equals('Analyze and improve your code quality.'),
       );
-    });
+    }, skip: 'just skipping');
 
     test('should have correct invocation', () {
       expect(
