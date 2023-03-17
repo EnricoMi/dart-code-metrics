@@ -46,7 +46,7 @@ void main() {
     test(
       'should return null if sdk path is not found inside environment PATH variable',
       () {
-       IOOverrides.runZoned(
+        IOOverrides.runZoned(
           () {
             expect(
               detectSdkPath(
@@ -64,7 +64,7 @@ void main() {
             return file;
           },
         );
-       throw Error();
+        throw Error();
       },
     );
   });
